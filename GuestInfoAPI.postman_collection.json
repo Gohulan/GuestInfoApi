@@ -1,0 +1,187 @@
+{
+  "info": {
+    "_postman_id": "f1234567-89ab-cdef-0123-456789abcdef",
+    "name": "GuestInfo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "API to manage guest records in MSSQL via ASP.NET Core.\n\nX-Api-Key: Gohulan#@54321"
+  },
+  "item": [
+    {
+      "name": "Get All Guests",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Api-Key",
+            "value": "Gohulan#@54321"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo"]
+        }
+      }
+    },
+    {
+      "name": "Get Guest Name by Mobile Number",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mobileNumber\": \"1234567890\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo/name-by-mobile",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo", "name-by-mobile"]
+        }
+      }
+    },
+    {
+      "name": "Get Mobile Number by Guest Name",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guestName\": \"John Doe\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo/mobile-by-name",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo", "mobile-by-name"]
+        }
+      }
+    },
+    {
+      "name": "Add New Guest",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guestName\": \"John Doe\",\n  \"mobileNumber\": \"1234567890\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo/add",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo", "add"]
+        }
+      }
+    },
+    {
+      "name": "Update Guest Name",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guestName\": \"Updated Name\",\n  \"mobileNumber\": \"1234567890\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo/update-name",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo", "update-name"]
+        }
+      }
+    },
+    {
+      "name": "Patch Guest",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currentMobileNumber\": \"1234567890\",\n  \"newGuestName\": \"Patched Name\",\n  \"newMobileNumber\": \"5555555555\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo/update",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo", "update"]
+        }
+      }
+    },
+    {
+      "name": "Delete Guest",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mobileNumber\": \"1234567890\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo/delete",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo", "delete"]
+        }
+      }
+    },
+    {
+      "name": "Check Guest Exists (HEAD)",
+      "request": {
+        "method": "HEAD",
+        "header": [
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo/exists/1234567890",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo", "exists", "1234567890"]
+        }
+      }
+    },
+    {
+      "name": "Options",
+      "request": {
+        "method": "OPTIONS",
+        "header": [
+          { "key": "X-Api-Key", "value": "Gohulan#@54321" }
+        ],
+        "url": {
+          "raw": "https://localhost:7104/api/guestinfo",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "7104",
+          "path": ["api", "guestinfo"]
+        }
+      }
+    }
+  ]
+}
